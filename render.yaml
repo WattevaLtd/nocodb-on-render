@@ -2,9 +2,17 @@ services:
   - type: web
     name: nocodb
     env: docker
-    image: nocodb/nocodb:latest
     plan: free
-    autoDeploy: false
+    dockerfilePath: ./Dockerfile
     envVars:
-      - key: NOCODB_PORT
+      - key: PORT
         value: 8080
+      - key: NC_AUTH_JWT_SECRET
+        value: your-very-secret-key
+      # Optional: Add your DB connection string if needed
+      # - key: NC_DB
+      #   value: mysql://user:pass@host/dbname
+    disk:
+      name: nocodb-data
+      mountPath: /usr/app/data
+      sizeGB: 1
