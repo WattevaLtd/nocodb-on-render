@@ -9,10 +9,6 @@ services:
         value: 8080
       - key: NC_AUTH_JWT_SECRET
         value: your-very-secret-key
-      # Optional: Add your DB connection string if needed
+      # Optional: Add your DB connection string if using external DB
       # - key: NC_DB
       #   value: mysql://user:pass@host/dbname
-    disk:
-      name: nocodb-data
-      mountPath: /usr/app/data
-      sizeGB: 1
