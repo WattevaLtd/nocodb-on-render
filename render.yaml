@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: nocodb
+    env: docker
+    image: nocodb/nocodb:latest
+    plan: free
+    autoDeploy: false
+    envVars:
+      - key: NOCODB_PORT
+        value: 8080
